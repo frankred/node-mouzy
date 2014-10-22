@@ -1,8 +1,10 @@
-var mouse = require('./build/Release/mouzy');
+var mouzy = require("./mouzy");
 
-// Move cursor 100 pixel to the right and 200 pixel down
-// mouse.move(deltaX, deltaY);
-mouse.move(100, -100);
+// Move cursor to screen position 200px/200px
+mouzy.setPosition(200, 200);
 
-// Mouse click
-mouse.click();
+// Move cursor by delta
+mouzy.move(323, -44);
+
+// Simulate click
+mouzy.click();

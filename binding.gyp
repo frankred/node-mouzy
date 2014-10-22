@@ -1,7 +1,7 @@
 {
   "targets": [
     {
-      "target_name": "mouzy",
+      "target_name": "mouzy_win",
       "sources": [ "mouzy-windows.cc" ]
     }
   ]

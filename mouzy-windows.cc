@@ -11,7 +11,7 @@
 
 using namespace v8;
 
-Handle<Value> Move(const Arguments& args) {
+Handle<Value> move(const Arguments& args) {
     HandleScope scope;
 
     if (args.Length() != 2) {
@@ -24,23 +24,36 @@ Handle<Value> Move(const Arguments& args) {
         return scope.Close(Undefined());
     }
 
-    INPUT b[1];
-    b->type = INPUT_MOUSE;
-    b->mi.mouseData = 0;
-    b->mi.dwFlags = MOUSEEVENTF_MOVE;
-    b->mi.time = 0;
-    b->mi.dwExtraInfo = 0;
+    POINT p;
+    GetCursorPos(&p);
+    p.x += args[0]->NumberValue();
+    p.y += args[1]->NumberValue();
 
-    b->mi.dx = args[0]->NumberValue();
-    b->mi.dy = args[1]->NumberValue();
+    SetCursorPos(p.x, p.y);
 
-    SendInput(1, b, sizeof(INPUT));
+    return scope.Close(Undefined());
+}
+
+Handle<Value> setPosition(const Arguments& args) {
+    HandleScope scope;
+
+    if (args.Length() != 2) {
+        ThrowException(Exception::TypeError(String::New("Wrong number of arguments")));
+        return scope.Close(Undefined());
+    }
+
+    if (!args[0]->IsNumber() || !args[1]->IsNumber()) {
+        ThrowException(Exception::TypeError(String::New("Wrong arguments")));
+        return scope.Close(Undefined());
+    }
+
+    SetCursorPos(args[0]->NumberValue(), args[1]->NumberValue());
 
     return scope.Close(Undefined());
 }
 
 
-Handle<Value> Click(const Arguments& args) {
+Handle<Value> click(const Arguments& args) {
     HandleScope scope;
 
     if (args.Length() > 0) {
@@ -68,8 +81,9 @@ Handle<Value> Click(const Arguments& args) {
 
 
 void init(Handle<Object> exports) {
-    exports->Set(String::NewSymbol("move"), FunctionTemplate::New(Move)->GetFunction());
-    exports->Set(String::NewSymbol("click"), FunctionTemplate::New(Click)->GetFunction());
+    exports->Set(String::NewSymbol("setPosition"), FunctionTemplate::New(setPosition)->GetFunction());
+    exports->Set(String::NewSymbol("click"), FunctionTemplate::New(click)->GetFunction());
+    exports->Set(String::NewSymbol("move"), FunctionTemplate::New(move)->GetFunction());
 }
 
-NODE_MODULE(mouzy, init)
+NODE_MODULE(mouzy_win, init)
