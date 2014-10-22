@@ -2,7 +2,7 @@
   "targets": [
     {
       "target_name": "mouzy",
-      "sources": [ "mouzy.cc" ]
+      "sources": [ "mouzy-windows.cc" ]
     }
   ]
 }
