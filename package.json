@@ -1,0 +1,33 @@
+{
+  "name": "mouzy",
+  "description": "Node module to control your mouse",
+  "keywords": [
+    "mouse",
+    "emulate",
+    "move",
+    "click",
+    "setPosition"
+  ],
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/frankred/node-mouzy.git"
+  },
+  "author": "Frank Roth (https://github.com/frankred)",
+  "main": "index.js",
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/frankred/node-mouzy/issues",
+    "email": "frankred@web.de"
+  },
+  "scripts": {
+    "install": "node-gyp rebuild"
+  },
+  "gypfile": true,
+  "homepage": "https://github.com/frankred/node-mouzy",
+  "license": "MIT"
+}
