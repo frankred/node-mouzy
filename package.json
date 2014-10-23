@@ -25,7 +25,7 @@
     "email": "frankred@web.de"
   },
   "scripts": {
-    "install": "node-gyp rebuild"
+    "install": "node-gyp configure build",
   },
   "gypfile": true,
   "homepage": "https://github.com/frankred/node-mouzy",
