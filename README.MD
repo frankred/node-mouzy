@@ -4,7 +4,7 @@ Mouzy is a node module to control your mouse cursor. Currently only Windows is s
 
 Install
 ==
-```npm install mouzy```
+```npm install -S "git+https://github.com/frankred/node-mouzy.git"```
 
 Support
 ==
