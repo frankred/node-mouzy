@@ -4,7 +4,11 @@ Mouzy is a node module to control your mouse cursor. Currently only Windows is s
 
 Install
 ==
-```npm install -S "git+https://github.com/frankred/node-mouzy.git"```
+```git clone https://github.com/frankred/node-mouzy.git"```
+```cd node-mouzy"```
+```node-gyp configure"```
+```node-gyp build"```
+
 
 Support
 ==
@@ -14,7 +18,7 @@ Usage
 ==
 Include
 ```
-var mouzy = require("mouzy");
+var mouzy = require("./node-mouzy/index.js");
 ```
 
 Move cursor to screen position 200px/200px.
