@@ -21,7 +21,7 @@ Usage
 ==
 Include
 ```
-var mouzy = require("./node-mouzy/index.js");
+var mouzy = require("./node-mouzy");  // or var mouzy = require("./node-mouzy/index.js");
 ```
 
 Move cursor to screen position 200px/200px.
