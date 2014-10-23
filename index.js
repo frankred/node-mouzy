@@ -1,7 +1,7 @@
 // What platform you're running on: 'darwin', 'freebsd', 'linux', 'sunos' or 'win32'
 switch (process.platform) {
     case "win32":
-        module.exports = require('./build/Release/mouzy_win');
+        module.exports = require('./build/Release/mouzy_win.node');
         break;
     case "darwin":
     case "linux":
