@@ -24,6 +24,10 @@
     "url": "https://github.com/frankred/node-mouzy/issues",
     "email": "frankred@web.de"
   },
+  "scripts": {
+    "install": "node-gyp rebuild"
+  },
+  "gypfile": true,
   "homepage": "https://github.com/frankred/node-mouzy",
   "license": "MIT"
 }

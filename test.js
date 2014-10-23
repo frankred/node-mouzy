@@ -1,4 +1,4 @@
-var mouzy = require("./mouzy");
+var mouzy = require("./index");
 
 // Move cursor to screen position 200px/200px
 mouzy.setPosition(200, 200);
